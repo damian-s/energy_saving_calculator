@@ -33,10 +33,10 @@
     
   render: ->
     `<div className='col-md-12'>
-      <div className='well text-center'>
-        <h4> { I18n.t('electric_vehicle.title') } </h4>
+      <div className='well text-center form-header'>
+        <h4><strong>{ I18n.t('electric_vehicle.title') }</strong></h4>
       </div>
-      <div className='well'>
+      <div className='well form-content'>
         <form id='electric_vehicle_form' className='form_horizontal' data-toggle='validator' role='form'>
           <SelectField values={ this.entry_type_values() } selected_value={ this.entry_type() } form_name={ this.form_name } field_name='entry_type' is_required={ true } on_change={ this.form_change } />
           { this.entry_type() == 'from_list' ? <EvList form_settings={this.ev_list_params()} on_change={ this.form_change } submit={ this.submit }/> : false}

@@ -68,6 +68,12 @@ en:
     hour_start_hint: Please enter start hour of car availability
     hour_stop: Stop hour of availability
     hour_stop_hint: Please enter stop hour of car availability
+    add: Add availability
+    
+  availability_table:
+    start: Start of timeslot
+    stop: Stop of timeslot
+    day: Day of week
     
   electricity_consumption:
     title: Electicity consumption

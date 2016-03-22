@@ -2,9 +2,9 @@
 
   propTypes:
     value: React.PropTypes.string
-    form_name: React.PropTypes.string # pv_system
-    field_name: React.PropTypes.string # location
-    is_required: React.PropTypes.bool #true
+    form_name: React.PropTypes.string
+    field_name: React.PropTypes.string
+    is_required: React.PropTypes.bool
     type: React.PropTypes.string
     on_change: React.PropTypes.func
     

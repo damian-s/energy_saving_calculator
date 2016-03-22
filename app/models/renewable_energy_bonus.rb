@@ -1,0 +1,3 @@
+class RenewableEnergyBonus < Bonus
+  
+end

@@ -22,11 +22,6 @@
     
   result_settings: ()->
     @state.result || {}
-    
-#  abla: (c)->
-#    x = @state.abla || ''
-#    y = x + 'popo'
-#    @setState({abla: y})
   
   render: ->
     `<div className="container">

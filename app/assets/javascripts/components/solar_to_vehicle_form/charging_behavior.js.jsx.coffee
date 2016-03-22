@@ -28,10 +28,10 @@
     
   render: ->
     `<div className='col-md-12'>
-      <div className='well text-center'>
+      <div className='well text-center form-header'>
         <h4> { I18n.t('charging_behavior.title') } </h4>
       </div>
-      <div className='well'>
+      <div className='well form-content'>
         <form id='charging_behavior_form' className='form_horizontal' data-toggle='validator' role='form'>
           <TextField value={ this.average_capacity_at_start() } form_name={ this.form_name } field_name='average_capacity_at_start' type='number' is_required={ true } on_change={ this.form_change } />
           <TextField value={ this.average_daily_driving_distance() } form_name={ this.form_name } field_name='average_daily_driving_distance' type='number' is_required={ true } on_change={ this.form_change } />

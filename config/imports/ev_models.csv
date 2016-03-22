@@ -1,0 +1,41 @@
+type;model;battery_capacity;charging_power;consumption
+PHEV;Audi A3 Sportback e-tron;8.8;3.7;11.4
+EV;BMW i3 3,7kW;18.8;3.7;12.9
+EV;BMW i3 7,4kW;18.8;7.4;12.9
+PHEV;BMW i8;7.1;3.7;11.9
+EV;Citroen Berlingo Electric L1;22.5;3.2;17.7
+EV;Citroen C-Zero;14.5;3.7;12.6
+EV;Fisker Karma;20.0;3.7;20.6
+EV;Ford Focus Electric 3,7kW;23.0;3.7;15.4
+EV;Ford Focus Electric 6,6kW;23.0;6.6;15.4
+EV;KIA Soul EV 3,7kW;27.0;3.7;14.7
+EV;KIA Soul EV 6,6kW;27.0;6.6;14.7
+EV;Mercedes-Benz B-Klasse ED 11kW;28.0;11.0;16.6
+PHEV;Mercedes-Benz C-Klasse C 350e;6.2;3.7;16.5
+PHEV;Mercedes-Benz GLE 500e 4Matic;8.8;2.8;16.0
+PHEV;Mercedes-Benz S500 Plug-In Hybrid;8.7;3.6;13.5
+EV;Mitsubishi i-MiEV;16.0;3.7;12.5
+PHEV;Mitsubishi Outlander Plug-In Hybrid;12.0;3.7;13.4
+EV;Nissan Leaf 3,6kW;24.0;3.6;15.0
+EV;Nissan Leaf 6,6 kW;24.0;6.6;15.0
+EV;Nissan e-NV200 4,6kW;24.0;4.6;16.5
+EV;Nissan e-NV200 6,6kW;24.0;6.6;16.5
+PHEV;Opel Ampera;16.0;3.7;16.0
+EV;Peugeot iOn;14.5;3.7;12.6
+PHEV;Porsche Cayenne S E-Hybrid 3,6kW;10.8;3.6;20.8
+PHEV;Porsche Panamera S E-Hybrid;9.4;3.6;16.2
+EV;Renault Fluence Z.E.;22.0;3.7;14.0
+EV;Renault Kangoo Z.E.;22.0;3.7;14.0
+EV;Renault Twizy;6.1;3.7;6.3
+EV;Renault ZOE 22kW;22.0;22.0;14.6
+EV;smart fortwo electric drive 3,3kW;17.6;3.3;15.1
+EV;smart fortwo electric drive 22kW;17.6;22.0;16.3
+EV;Tesla Model S Single Charger 11kW;85.0;11.0;23.5
+EV;Tesla Model S Double Charger 22kW;85.0;22.0;23.5
+PHEV;Toyota Prius Plug-In Hybrid;4.4;2.8;5.2
+EV;Volkswagen e-up!;18.7;3.6;11.7
+EV;Volkswagen e-Golf;24.0;3.6;12.7
+PHEV;Volkswagen Golf GTE;8.7;3.6;14.4
+PHEV;Volkswagen Passat Limousine GTE;9.9;3.6;13.0
+EV;Volvo C30 Electric;24.0;22.0;17.5
+PHEV;Volvo V60 Plug-In Hybrid;11.2;3.6;21.7

@@ -9,3 +9,31 @@
 .fixed-width {
   width: 30%;
 }
+
+.form-header {
+  background-color: #8DC63F;
+  color: #FFFFFF;
+  box-shadow: 10px 10px 5px #ccc; 
+    -moz-box-shadow: 10px 10px 5px #ccc; 
+    -webkit-box-shadow: 10px 10px 5px #ccc; 
+    -khtml-box-shadow: 10px 10px 5px #ccc;
+  border-style: solid;
+  border-color: #D9D9D9;
+  border-width: 2px;
+  border-radius: 5px;
+}
+
+.form-content {
+  box-shadow: 10px 10px 5px #ccc; 
+    -moz-box-shadow: 10px 10px 5px #ccc; 
+    -webkit-box-shadow: 10px 10px 5px #ccc; 
+    -khtml-box-shadow: 10px 10px 5px #ccc;
+  border-style: solid;
+  border-color: #D9D9D9;
+  border-width: 2px;
+  border-radius: 5px;
+}
+
+.text-black {
+  color: #333333;
+}
