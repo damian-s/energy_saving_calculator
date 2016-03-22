@@ -1,0 +1,32 @@
+doctype html
+html lang=I18n.locale
+  head
+    title Energy saving calculator
+    = csrf_meta_tags
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
+
+  body
+    #wrapper.strech-horizontal
+      nav.navar.navbar-default.navbar-static-top style="margin-bottom: 0" 
+        .container-fluid
+          .navbar-header
+            button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-collapse"
+              span.sr-only
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand href="/"
+              = image_tag('tmh_logo.png')
+          ul.nav.navbar-top-links.navbar-right
+            li.dropdown
+              a.dropdown-toggle href="#" data-toggle="dropdown"
+                i.fa.fa-flag.menu-drop-icons-spacing
+                i.fa.fa-caret-down
+              ul.dropdown-menu role="menu"
+                li
+                  a href="/change_locale/en" English
+                li
+                  a href="/change_locale/de" Deutsch
+    = yield

@@ -12,4 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min
+ *= require select2
+ *= require select2-bootstrap
  */

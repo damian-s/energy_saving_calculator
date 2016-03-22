@@ -12,5 +12,19 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require turbolinks
+//= require react
+//= require react_ujs
+//= require dropzone
+//= require select2
+//= require i18n
+//= require translations
+//= require bootstrap-validator/dist/validator
+//= require lodash/dist/lodash
+//= require moment/moment
+//= require moment-timezone/builds/moment-timezone-with-data-2010-2020
+//= require eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min
+
+//= require components
 //= require_tree .

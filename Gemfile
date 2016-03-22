@@ -12,6 +12,12 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'pg'
 gem 'react-rails', '~> 1.6.0'
+gem 'slim-rails'
+gem 'twitter-bootstrap-rails'
+gem 'select2-rails'
+gem 'dropzonejs-rails'
+gem 'i18n-js', '>= 3.0.0.rc11'
+gem 'bower-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri

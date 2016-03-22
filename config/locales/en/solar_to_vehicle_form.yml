@@ -1,0 +1,81 @@
+en:
+  submit: Submit
+  err:
+    required_empty: Please fill in this field
+    required_numeric: Please enter a number
+  
+  sv_header:
+    title: SOLAR TO VEHICLE
+    subtitle: Your tool for optimizing self-consumption with your Electric Vehicle
+    explanation_html: <p><strong>Explanation</strong></p>
+                      <p>Diese Anwendung ermöglicht Ihnen eine schnelle Berechnung der Wirtschaftlichkeit und des erzielbaren Eigenvebrauchs in Abhängigkeit Ihrer Angaben zu PV-Anlage, Elektroauto, Ladestation und Nutzungsverhalten.</p>
+                      <ul>
+                        <li>Alle Eingabefelder sind mit Erklärungen versehen. In "vorausgefüllten Pflichtfeldern" sind bereits Erfahrungswerte eingetragen. Sie können diese übernehmen oder eigene Werte eintragen.</li>
+                        <li>Sie können - nach dem Ausfüllen aller Pflichtfelder und ggf. vorausgefüllter Pflichtfelder - die Berechnung starten, indem Sie auf den Button "ERGEBNIS" drücken. </li>
+                        <li>Sollten Sie nachträglich nochmal eine Eingabe verändern wollen drücken Sie bitte nochmals auf "ERGEBNIS" und nehmen Sie die gewünschten Änderungen vor. Anschließend kann die Berechnung erneut durch Klicken auf "ERGEBNIS" gestartet werden.</li>
+                        <li>Genauere Informationen zu Ihrem Ergebnis erhalten Sie auch unter den Tabs "Grafiken" und "Wirtschaftlichkeit".</li>
+                      </ul>
+    mandatory_field: Mandatory field
+    pre_filled_mandatory_field: Pre-filled mandatory field
+    pre_optional_field: Optional entry field
+    
+  pv_system:
+    title: PV system
+    location: Location (zip code)
+    location_hint: Enter your location's zip code
+    power: Power of the pv System
+    power_hint: Enter power of the pv system in kWp
+    date: Commissioning date
+    date_hint: Enter commisioning date
+    
+  electric_vehicle:
+    title: Electric Vehicle
+    entry_type_label: How do you want to enter your EV's data?
+    entry_type:
+        from_list_opt: Select model from list
+        manual_opt: Input data manually
+    entry_type_hint: Please select your EV parameters
+    
+  ev_params:
+    battery_capacity: Battery capacity [kWh]
+    battery_capacity_hint: Enter battery capacity (in kWh)
+    charging_power: Charging power [kW]
+    charging_power_hint: Enter charging power (in kW)
+    consumption: Consumption [kWh/100km]
+    consumption_hint: Enter power consumption (in kWh/100km)
+       
+  ev_list:
+    selected_ev_label: Car
+    selected_ev:
+      bmw_opt: BMW 1
+      audi_opt: Audi 2
+      smart_opt: Smart 3
+    
+  charging_behavior:
+    title: Charging behavior
+    average_capacity_at_start: Average capacity at start of charging [%]
+    average_capacity_at_start_hint: Enter average capacity at start of charging (in %)
+    average_daily_driving_distance: Average dayly driving distance [km]
+    average_daily_driving_distance_hint: Enter average dayly driving distance (in km)
+    enter_availability: Please enter the time slots, when your car usually stands at home.
+    
+  availability:  
+    selected_type_label: Day of avaiability
+    selected_type:
+      weekend_opt: Weekend
+      weekday_opt: Weekday
+    hour_start: Start hour of availability
+    hour_start_hint: Please enter start hour of car availability
+    hour_stop: Stop hour of availability
+    hour_stop_hint: Please enter stop hour of car availability
+    
+  electricity_consumption:
+    title: Electicity consumption
+    is_at_home: Are you daytimes usually at home on working days?
+    yearly_electricity_consumption: Your yearly electricity consumption (household)
+    no_of_people: Number of people in household
+    electricity_price: Your current electricity price (household tarif)
+    
+  result:
+    title: Result
+   
