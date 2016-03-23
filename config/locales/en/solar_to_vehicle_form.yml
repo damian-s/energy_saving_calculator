@@ -77,10 +77,24 @@ en:
     
   electricity_consumption:
     title: Electicity consumption
-    is_at_home: Are you daytimes usually at home on working days?
-    yearly_electricity_consumption: Your yearly electricity consumption (household)
-    no_of_people: Number of people in household
-    electricity_price: Your current electricity price (household tarif)
+    at_home_on_weekdays_label: Are you daytimes usually at home on working days? (Monday - Friday 10:00 - 16:00)
+    at_home_on_weekdays:
+      true_opt: 'Yes'
+      false_opt: 'No'
+    
+    yearly_consumption_label: Your yearly electricity consumption (household)
+    yearly_consumption:
+      enter_value_opt: Enter value
+      enter_people_no_opt: Enter number of people in household
+
+    people_no: Number of people in your household
+    people_no_hint: Enter number of people in your household
+    
+    yearly_consumption_kwh: Yearly consumption [kWh]
+    yearly_consumption_kwh_hint: Enter yearly consumption (in kWh)
+    
+    electricity_price: Your electricity price (household tarif) [ct/kWh]
+    electricity_price_hint: Enter your current electricity price (in ct/kWh)
     
   result:
     title: Result

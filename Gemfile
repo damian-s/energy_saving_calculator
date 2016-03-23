@@ -20,6 +20,8 @@ gem 'i18n-js', '>= 3.0.0.rc11'
 gem 'bower-rails'
 
 group :development, :test do
+  gem 'rspec-rails'
+  gem 'capybara'
   gem 'byebug', platform: :mri
   gem 'pry'
 end

@@ -30,7 +30,16 @@ class IndexController < ApplicationController
           ]
         },
       },
-      electricity_consumption: {test: 'aaa4'},
+      electricity_consumption: {
+        at_home_on_weekdays: 'true',
+        at_home_on_weekdays_values: ['true', 'false'],
+        electricity_price: '10',
+        yearly_consumption: 'enter_value',
+        yearly_consumption_values: ['enter_value', 'enter_people_no'],
+        people_no: '1',
+        yearly_consumption_kwh: '1'
+        
+      },
       result: {test: 'aaa5'}
     }
   end
