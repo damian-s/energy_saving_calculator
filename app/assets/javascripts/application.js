@@ -25,6 +25,7 @@
 //= require moment/moment
 //= require moment-timezone/builds/moment-timezone-with-data-2010-2020
 //= require eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min
+//= require bootstrap-slider
 
 //= require components
 //= require_tree .

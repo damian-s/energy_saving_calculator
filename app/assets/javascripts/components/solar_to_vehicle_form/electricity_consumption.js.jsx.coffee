@@ -1,10 +1,9 @@
 @ElectricityConsumption = React.createClass
   
+  mixins: [ FormStatusHelpers ]
+  
   propTypes:
     form_settings: React.PropTypes.object
-    
-  getInitialState: ()->
-    @props.form_settings
     
   form_name: 'electricity_consumption'
     
@@ -36,15 +35,10 @@
     @setState new_state
     
   submit: (event)->
-    console.log 'submit'
+    $('#stv_main_form').trigger 'submit_form', [@form_name, @state]
   
-  render: ->
-    console.log @state
-    `<div className='col-md-12'>
-      <div className='well text-center form-header'>
-        <h4> { I18n.t('electricity_consumption.title') } </h4>
-      </div>
-      <div className='well form-content text-center'>
+  render_form: ->
+      `<div className='well form-content text-center'>
         <form id='electricity_consumption_form' className='form_horizontal' data-toggle='validator' role='form'>
           <SelectField values={ this.at_home_on_weekdays_values() } selected_value={ this.at_home_on_weekdays() } form_name={ this.form_name } field_name='at_home_on_weekdays' is_required={ true } on_change={ this.form_change } />
           <SelectField values={ this.yearly_consumption_values() } selected_value={ this.yearly_consumption() } form_name={ this.form_name } field_name='yearly_consumption' is_required={ true } on_change={ this.form_change } />
@@ -53,6 +47,9 @@
           <TextField value={ this.electricity_price() } form_name={ this.form_name } field_name='electricity_price' type='number' is_required={ true } on_change={ this.form_change } />
           <button type='button' className='btn btn-default' onClick={ this.submit }>{ I18n.t('submit') }</button>
         </form>
-      </div>
-    </div>`
+      </div>`
     
+  render: ->
+    `<div className='col-md-12'>
+      { this.render_header_and_form_according_to_status(this.render_form) }
+     </div>`

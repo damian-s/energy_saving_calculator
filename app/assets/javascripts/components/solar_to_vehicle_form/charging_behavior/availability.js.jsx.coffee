@@ -21,7 +21,6 @@
     field = _.replace(event.target.id, "#{@form_name}_", '')
     new_state = {}
     new_state[field] = event.target.value
-    console.log new_state
     @setState new_state
     
   submit: (event)->
@@ -37,6 +36,9 @@
     new_timeslots.splice(index, 1)
     @setState { timeslots: new_timeslots }
     
+  assign_timerange: (event, timerange)->
+    @setState {hour_start: timerange[0], hour_stop: timerange[1]}
+  
   render: ->
     `<div className='col-md-12'>
       <div className='text-center'>
@@ -44,8 +46,8 @@
       </div>
       <div className='row text-center'>
         <SelectField values={ this.types() } selected_value={ this.selected_type() } form_name={ this.form_name } field_name='selected_type' is_required={ true } on_change={ this.form_change } />
-        <DateField form_name={ this.form_name } field_name='hour_start' is_required={ true } on_change={ this.form_change } type='hour'/>
-        <DateField form_name={ this.form_name } field_name='hour_stop' is_required={ true } on_change={ this.form_change } type='hour' />
+        <br />
+        <HourSliderField form_name={ this.form_name } field_name='timeslot_timerenge' on_change={ this.assign_timerange } />
         <button type='button' className='btn btn-default' onClick={ this.add_availability }>{ I18n.t('availability.add') }</button>
         <AvailabilityTable table_data={ this.timeslots() } on_delete={ this.delete_availability } />
       </div>

@@ -1,8 +1,13 @@
 en:
   submit: Submit
+  click_to_edit: Click to edit
+  
   err:
     required_empty: Please fill in this field
     required_numeric: Please enter a number
+    
+  hour_slider:
+    selected_hour: Selected hour
   
   sv_header:
     title: SOLAR TO VEHICLE
@@ -35,21 +40,17 @@ en:
         from_list_opt: Select model from list
         manual_opt: Input data manually
     entry_type_hint: Please select your EV parameters
-    
-  ev_params:
     battery_capacity: Battery capacity [kWh]
     battery_capacity_hint: Enter battery capacity (in kWh)
     charging_power: Charging power [kW]
     charging_power_hint: Enter charging power (in kW)
     consumption: Consumption [kWh/100km]
     consumption_hint: Enter power consumption (in kWh/100km)
-       
-  ev_list:
-    selected_ev_label: Car
-    selected_ev:
+    ev_label: Car model
+    ev:
       bmw_opt: BMW 1
       audi_opt: Audi 2
-      smart_opt: Smart 3
+      smart_opt: Smart 3        
     
   charging_behavior:
     title: Charging behavior

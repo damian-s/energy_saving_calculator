@@ -11,7 +11,7 @@
   picker_params: ()->
     switch @props.type
       when 'hour' then { format: 'HH:mm'  }
-      else { defaultDate: @props.value, format: 'DD/MM/YYYY' }
+      else { defaultDate: @props.value, format: 'YYYY-MM-DD' }
     
   componentDidMount: ()->
     dp = $("##{@field_id()}").datetimepicker(@picker_params())

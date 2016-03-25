@@ -43,6 +43,8 @@ GEM
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
+    bootstrap-slider-rails (6.1.6)
+      railties (>= 3.2, < 5.0)
     bower-rails (0.10.0)
     builder (3.2.2)
     byebug (8.2.2)
@@ -229,6 +231,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-slider-rails
   bower-rails
   byebug
   capybara
