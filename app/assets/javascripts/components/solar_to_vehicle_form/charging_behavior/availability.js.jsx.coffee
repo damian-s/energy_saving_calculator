@@ -8,15 +8,6 @@
     
   form_name: 'availability'
   
-  timeslots: ()->
-    @state.timeslots
-    
-  types: ()->
-    @state.types
-    
-  selected_type: ()->
-    @state.selected_type
-  
   form_change: (event)->
     field = _.replace(event.target.id, "#{@form_name}_", '')
     new_state = {}
@@ -45,11 +36,11 @@
         <h4> { I18n.t('charging_behavior.enter_availability') } </h4>
       </div>
       <div className='row text-center'>
-        <SelectField values={ this.types() } selected_value={ this.selected_type() } form_name={ this.form_name } field_name='selected_type' is_required={ true } on_change={ this.form_change } />
+        <SelectField values={ this.state.types } selected_value={ this.state.selected_type } form_name={ this.form_name } field_name='selected_type' is_required={ true } on_change={ this.form_change } />
         <br />
         <HourSliderField form_name={ this.form_name } field_name='timeslot_timerenge' on_change={ this.assign_timerange } />
         <button type='button' className='btn btn-default' onClick={ this.add_availability }>{ I18n.t('availability.add') }</button>
-        <AvailabilityTable table_data={ this.timeslots() } on_delete={ this.delete_availability } />
+        <AvailabilityTable table_data={ this.state.timeslots } on_delete={ this.delete_availability } />
       </div>
     </div>`
     

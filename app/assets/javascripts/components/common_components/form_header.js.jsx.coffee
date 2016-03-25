@@ -8,7 +8,7 @@
     I18n.t("#{@props.form_name}.title")
     
   edit: ()->
-    $('#stv_main_form').trigger 'change_acceptance', [@props.form_name]
+    $('#stv_main_form').trigger 'edit_form', [@props.form_name]
     
   render_title: ()->
     `<h4><strong> { this.form_title() } </strong></h4>`

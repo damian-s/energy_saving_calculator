@@ -6,9 +6,7 @@
     
   table_data: ()->
     @props.table_data || []
-#    (@props.table_data || []).map (row, index)->
-#      _.merge row, {key: index}
-#    
+    
   on_delete: (index)->
     ()=>
       @props.on_delete(index)

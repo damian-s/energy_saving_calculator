@@ -5,6 +5,9 @@
   propTypes:
     form_settings: React.PropTypes.object  
     
+  shouldComponentUpdate: (new_props, new_state)->
+    true
+    
   form_name: 'result'
     
   render_form: ->

@@ -8,9 +8,6 @@
     field_name: React.PropTypes.string
     on_change: React.PropTypes.func; 
     
-#  slider_config = ()->
-#    _.merge( @default_config(), (@props.slider_config || {}))
-    
   default_config: ()->
     formatter: (min)=>
       if min[0] && min[1]
@@ -22,7 +19,6 @@
     ticks: [0, 240, 480, 720, 960, 1200, 1439]
     
   componentDidMount: ()->
-    console.log "##{@field_id()}"
     $("##{@field_id()}").slider(@default_config())
     $("##{@field_id()}").on('slide', @convert_and_pass)
 
