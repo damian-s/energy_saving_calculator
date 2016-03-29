@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+  username: <DB USERNAME>
+  password: <DB PASSWORD>
+  host: <DB HOSTNAME/IP ADDRESS>
+
+development:
+  <<: *default
+  database: energy_saving_calc_dev
+
+test:
+  <<: *default
+  database: energy_saving_calc_test
+
+production:
+  <<: *default
+  database: energy_saving_calc_prod
