@@ -7,6 +7,9 @@
   form_title: ()->
     I18n.t("#{@props.form_name}.title")
     
+  header_id: ()->
+    "#{@props.form_name}_header"
+    
   edit: ()->
     $('#stv_main_form').trigger 'edit_form', [@props.form_name]
     
@@ -23,6 +26,6 @@
      </div>`
     
   render: ()->
-    `<div className='well text-center form-header'>
+    `<div id={this.header_id()} className='well text-center form-header'>
       { this.props.acceptance ? this.render_title_with_acceptance() : this.render_title() } 
      </div>`

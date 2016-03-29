@@ -23,6 +23,8 @@ gem 'bootstrap-slider-rails'
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'capybara-select2'
   gem 'byebug', platform: :mri
   gem 'pry'
 end
