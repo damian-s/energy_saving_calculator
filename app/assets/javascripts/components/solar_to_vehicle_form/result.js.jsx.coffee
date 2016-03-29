@@ -16,6 +16,6 @@
     </div>`
     
   render: ->
-    `<div className='col-md-12'>
+    `<div>
       { this.render_header_and_form_according_to_status(this.render_form) }
      </div>`

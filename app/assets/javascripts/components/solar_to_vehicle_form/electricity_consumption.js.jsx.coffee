@@ -25,11 +25,13 @@
           { this.state.yearly_consumption == 'enter_value' ? <TextField value={ this.state.yearly_consumption_kwh } form_name={ this.form_name } field_name='yearly_consumption_kwh' type='number' is_required={ true } on_change={ this.form_change } /> : false}
           { this.state.yearly_consumption == 'enter_people_no' ? <TextField value={ this.state.people_no } form_name={ this.form_name } field_name='people_no' type='number' is_required={ true } on_change={ this.form_change } /> : false}
           <TextField value={ this.state.electricity_price } form_name={ this.form_name } field_name='electricity_price' type='number' is_required={ true } on_change={ this.form_change } />
-          <button type='button' className='btn btn-default' onClick={ this.submit }>{ I18n.t('submit') }</button>
+          <div className='text-left'>
+            <button type='button' className='btn btn-default' onClick={ this.submit }>{ I18n.t('submit') }</button>
+          </div>
         </form>
       </div>`
     
   render: ->
-    `<div className='col-md-12'>
+    `<div>
       { this.render_header_and_form_according_to_status(this.render_form) }
      </div>`

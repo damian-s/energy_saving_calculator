@@ -32,7 +32,9 @@
         <SelectField values={ this.state.entry_type_values } selected_value={ this.state.entry_type } form_name={ this.form_name } field_name='entry_type' is_required={ true } on_change={ this.form_change } />
         { this.state.entry_type == 'from_list' ? this.render_ev_list() : false}
         { this.state.entry_type == 'manual' ? this.render_ev_params() : false}
-        <button type='button' className='btn btn-default' onClick={ this.submit }>{ I18n.t('submit') }</button>
+        <div className='text-left'>
+          <button type='button' className='btn btn-default' onClick={ this.submit }>{ I18n.t('submit') }</button>
+        </div>
       </form>
      </div>`
    
@@ -52,7 +54,7 @@
     </div>`
  
   render: ->
-    `<div className='col-md-12'>
+    `<div>
       { this.render_header_and_form_according_to_status(this.render_form) }
      </div>`
 
