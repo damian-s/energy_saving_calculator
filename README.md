@@ -27,4 +27,4 @@
     > rake bower:install
 
 * Import static data do database from config/imports directory
-    > rake rake data_import:all
+    > rake data_import:all
