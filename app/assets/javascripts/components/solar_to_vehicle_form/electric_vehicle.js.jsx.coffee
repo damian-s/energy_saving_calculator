@@ -38,7 +38,7 @@
    
   render_ev_list: ()->
     `<div>
-      <SelectField values={ this.ev_list() } selected_value={ this.state.ev } form_name={ this.form_name } field_name='ev' is_required={ true } on_change={ this.form_change } />
+      <SelectField values={ this.ev_list() } selected_value={ this.state.ev } form_name={ this.form_name } field_name='ev' is_required={ true } on_change={ this.form_change } dont_translate={ true }/>
       <TextFieldReadonly value={ this.state.ev_data.battery_capacity } form_name={ this.form_name } field_name='battery_capacity' field_type='number' />
       <TextFieldReadonly value={ this.state.ev_data.charging_power } form_name={ this.form_name } field_name='charging_power' field_type='number' />
       <TextFieldReadonly value={ this.state.ev_data.consumption } form_name={ this.form_name } field_name='consumption' field_type='number' />

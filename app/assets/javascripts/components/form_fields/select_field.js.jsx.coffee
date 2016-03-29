@@ -3,10 +3,11 @@
   propTypes:
     values: React.PropTypes.array
     selected_value: React.PropTypes.string
-    form_name: React.PropTypes.string # pv_system
-    field_name: React.PropTypes.string # location
-    is_required: React.PropTypes.bool #true
-    on_change: React.PropTypes.func; 
+    form_name: React.PropTypes.string
+    field_name: React.PropTypes.string
+    is_required: React.PropTypes.bool
+    on_change: React.PropTypes.func
+    dont_translate: React.PropTypes.bool
     
   componentDidMount: ()->
     s = $("##{@field_id()}").select2({
@@ -34,6 +35,7 @@
     
   option_text: (option)->
     return '' if option == ''
+    return option if @props.dont_translate
     I18n.t("#{@props.form_name}.#{@props.field_name}.#{option}_opt")
     
   render: ->

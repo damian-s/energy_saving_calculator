@@ -26,7 +26,7 @@ en:
     
   pv_system:
     title: PV system
-    location: Location (zip code)
+    location_label: Location (zip code)
     location_hint: Enter your location's zip code
     power: Power of the pv System
     power_hint: Enter power of the pv system in kWp
@@ -47,10 +47,6 @@ en:
     consumption: Consumption [kWh/100km]
     consumption_hint: Enter power consumption (in kWh/100km)
     ev_label: Car model
-    ev:
-      bmw_opt: BMW 1
-      audi_opt: Audi 2
-      smart_opt: Smart 3        
     
   charging_behavior:
     title: Charging behavior
@@ -79,11 +75,13 @@ en:
   electricity_consumption:
     title: Electicity consumption
     at_home_on_weekdays_label: Are you daytimes usually at home on working days? (Monday - Friday 10:00 - 16:00)
+    at_home_on_weekdays_hint: Please select if you are at home on working days
     at_home_on_weekdays:
       true_opt: 'Yes'
       false_opt: 'No'
     
     yearly_consumption_label: Your yearly electricity consumption (household)
+    yearly_consumption_hint: Please select how do you want to enter your yearly energy consumption
     yearly_consumption:
       enter_value_opt: Enter value
       enter_people_no_opt: Enter number of people in household
