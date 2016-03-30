@@ -33,7 +33,7 @@
         { this.state.entry_type == 'from_list' ? this.render_ev_list() : false}
         { this.state.entry_type == 'manual' ? this.render_ev_params() : false}
         <div className='text-left'>
-          <button type='button' className='btn btn-default' onClick={ this.submit }>{ I18n.t('submit') }</button>
+          <SubmitButton on_click={ this.submit } />
         </div>
       </form>
      </div>`

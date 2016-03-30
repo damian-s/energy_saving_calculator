@@ -24,7 +24,7 @@
         <TextField value={ this.state.power } form_name={ this.form_name } field_name='power' type='number' is_required={ true } on_change={ this.form_change } />
         <DateField value={ this.state.date } form_name={ this.form_name } field_name='date' is_required={ true } on_change={ this.form_change } />
         <div className='text-left'>
-          <button type='button' className='btn btn-default' onClick={ this.submit }>{ I18n.t('submit') }</button>
+          <SubmitButton on_click={ this.submit } />
         </div>
       </form>
      </div>`

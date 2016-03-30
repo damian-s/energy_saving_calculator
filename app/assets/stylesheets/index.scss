@@ -60,6 +60,17 @@
 }
 
 .slider-handle {
-    background-color: #337ab7;
-    background-image: linear-gradient(to bottom, #149bdf 0%, #0480be 100%);
+    background-color: #8dc63f;
+    background-image: linear-gradient(to bottom, #7db234 0%, #8dc63f 100%);
+}
+
+.btn-default {
+    background-color: #8DC63F;
+    border-color: #ccc;
+    color: #FFFFFF;
+}
+
+.btn-default:hover {
+  background-color: #aed676;
+  color: #FFFFFF;
 }

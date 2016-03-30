@@ -24,7 +24,7 @@
         <TextField value={ this.state.average_daily_driving_distance } form_name={ this.form_name } field_name='average_daily_driving_distance' type='number' is_required={ true } on_change={ this.form_change } />
         <Availability form_settings={ this.state.availabilities } />
         <div className='text-left'>
-          <button type='button' className='btn btn-default' onClick={ this.submit }>{ I18n.t('submit') }</button>
+          <SubmitButton on_click={ this.submit } />
         </div>
       </form>
     </div>`
