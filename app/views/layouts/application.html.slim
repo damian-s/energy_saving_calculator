@@ -22,11 +22,8 @@ html lang=I18n.locale
           ul.nav.navbar-top-links.navbar-right
             li.dropdown
               a.dropdown-toggle href="#" data-toggle="dropdown"
-                i.fa.fa-flag.menu-drop-icons-spacing
-                i.fa.fa-caret-down
+                i.glyphicon.glyphicon-big.glyphicon-flag
               ul.dropdown-menu role="menu"
-                li
-                  a href="/change_locale/en" English
-                li
-                  a href="/change_locale/de" Deutsch
+                li = link_to 'English', change_locale_path('en')
+                li = link_to 'Deutsch', change_locale_path('de')
     = yield

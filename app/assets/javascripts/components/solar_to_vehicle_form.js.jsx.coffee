@@ -4,6 +4,10 @@
   
   propTypes:
     form_settings: React.PropTypes.object
+    locale: React.PropTypes.string
+    
+  componentWillMount: ()->
+    @set_locale(@props.locale)
     
   componentDidMount: ()->
     $(@form_element_id()).on 'edit_form', (event, form_name)=>
@@ -14,6 +18,11 @@
       @setState new_state
       
   form_name: 'stv_main'
+  
+  set_locale: (new_locale)->
+    console.log new_locale
+    I18n.locale = new_locale
+    I18n.defaultLocale = new_locale   
       
   pv_system_settings: ()->
     @state.pv_system || {}
