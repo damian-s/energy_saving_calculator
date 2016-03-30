@@ -58,6 +58,7 @@ en:
     
   availability:  
     selected_type_label: Day of avaiability
+    selected_type_hint: Please select day for new availability 
     selected_type:
       weekend_opt: Weekend
       weekday_opt: Weekday

@@ -50,7 +50,16 @@
 #availability_timeslot_timerenge {
   width: 40vw;
 }
-/*
-.slider-track-high, .slider-selection, .slider-track-low {
-	background: green;
-}*/
+
+.slider-selection.tick-slider-selection {
+    background-image: linear-gradient(to bottom, #8dc63f 0%, #c5e29d 100%);
+}
+
+.slider-tick.in-selection {
+    background-image: linear-gradient(to bottom, #8dc63f 0%, #c5e29d 100%);
+}
+
+.slider-handle {
+    background-color: #337ab7;
+    background-image: linear-gradient(to bottom, #149bdf 0%, #0480be 100%);
+}

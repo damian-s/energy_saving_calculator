@@ -1,6 +1,6 @@
 @ElectricityConsumption = React.createClass
   
-  mixins: [ FormStatusHelpers ]
+  mixins: [ FormStatusHelpers, SubmitScrollAnimate ]
   
   propTypes:
     form_settings: React.PropTypes.object
