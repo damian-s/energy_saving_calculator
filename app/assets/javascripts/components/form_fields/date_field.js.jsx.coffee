@@ -28,13 +28,10 @@
     I18n.t("#{@props.form_name}.#{@props.field_name}_hint")
     
   error_message: ()->
-    if @props.required
-      switch @props.type
-        when 'text' then I18n.t('err.required_empty')
-        when 'numeric' then I18n.t('err.required_numeric')
-        else ''
+    if @props.is_required
+      I18n.t('err.required_empty')
     else
-      ''
+      false
     
   render: ->
     `<div className='form-group'>

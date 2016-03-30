@@ -19,12 +19,12 @@
     
   render_form: ()->
     `<div className='well form-content text-center'>
-      <form id='pv_system_form' className='form_horizontal' data-toggle='validator' role='form'>
+      <form id={ this.form_element_name() } className='form_horizontal'>
         <SelectField values={ this.state.location_values } selected_value={ this.state.location } form_name={ this.form_name } field_name='location' is_required={ true } on_change={ this.form_change } dont_translate={ true } />
         <TextField value={ this.state.power } form_name={ this.form_name } field_name='power' type='number' is_required={ true } on_change={ this.form_change } />
         <DateField value={ this.state.date } form_name={ this.form_name } field_name='date' is_required={ true } on_change={ this.form_change } />
         <div className='text-left'>
-          <SubmitButton on_click={ this.submit } />
+          <SubmitButton form={ this.form_element_id() } on_click={ this.submit } />
         </div>
       </form>
      </div>`

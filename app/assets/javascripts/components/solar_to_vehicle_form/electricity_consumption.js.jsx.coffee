@@ -19,14 +19,14 @@
   
   render_form: ->
       `<div className='well form-content text-center'>
-        <form id='electricity_consumption_form' className='form_horizontal' data-toggle='validator' role='form'>
+        <form id={ this.form_element_name() } className='form_horizontal' data-toggle='validator' role='form'>
           <SelectField values={ this.state.at_home_on_weekdays_values } selected_value={ this.state.at_home_on_weekdays } form_name={ this.form_name } field_name='at_home_on_weekdays' is_required={ true } on_change={ this.form_change } />
           <SelectField values={ this.state.yearly_consumption_values } selected_value={ this.state.yearly_consumption } form_name={ this.form_name } field_name='yearly_consumption' is_required={ true } on_change={ this.form_change } />
           { this.state.yearly_consumption == 'enter_value' ? <TextField value={ this.state.yearly_consumption_kwh } form_name={ this.form_name } field_name='yearly_consumption_kwh' type='number' is_required={ true } on_change={ this.form_change } /> : false}
           { this.state.yearly_consumption == 'enter_people_no' ? <TextField value={ this.state.people_no } form_name={ this.form_name } field_name='people_no' type='number' is_required={ true } on_change={ this.form_change } /> : false}
           <TextField value={ this.state.electricity_price } form_name={ this.form_name } field_name='electricity_price' type='number' is_required={ true } on_change={ this.form_change } />
           <div className='text-left'>
-            <SubmitButton on_click={ this.submit } />
+            <SubmitButton form={ this.form_element_id() } on_click={ this.submit } />
           </div>
         </form>
       </div>`

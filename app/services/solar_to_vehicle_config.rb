@@ -23,7 +23,7 @@ class SolarToVehicleConfig
       location: '',
       location_values: zip_codes,
       power: '', 
-      date: Time.zone.now.strftime('%Y-%m-%d') 
+      date: ''
     }
   end
   
@@ -48,8 +48,10 @@ class SolarToVehicleConfig
       average_daily_driving_distance: '',
       availabilities: { 
         types: AVAILABILITES_TYPES,
-        selected_type: '',
-        timeslots: []
+        selected_type: AVAILABILITES_TYPES.first,
+        timeslots: [],
+        hour_start: '8:00',
+        hour_stop: '16:00'
       }
     }    
   end

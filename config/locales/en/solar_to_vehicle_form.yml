@@ -3,8 +3,9 @@ en:
   click_to_edit: Click to edit
   
   err:
-    required_empty: Please fill in this field
-    required_numeric: Please enter a number
+    required_empty: --- Please fill in this field ---
+    required_numeric: --- Please enter a number equal or greater than 0 ---
+    timeslots_missing: You have to add at least one timeslot
     
   hour_slider:
     selected_hour: Selected hour
@@ -20,6 +21,7 @@ en:
                         <li>Sollten Sie nachträglich nochmal eine Eingabe verändern wollen drücken Sie bitte nochmals auf "ERGEBNIS" und nehmen Sie die gewünschten Änderungen vor. Anschließend kann die Berechnung erneut durch Klicken auf "ERGEBNIS" gestartet werden.</li>
                         <li>Genauere Informationen zu Ihrem Ergebnis erhalten Sie auch unter den Tabs "Grafiken" und "Wirtschaftlichkeit".</li>
                       </ul>
+                      <div class='text-right'><strong>© The Mobility House GmbH, 2016</strong></div>
     mandatory_field: Mandatory field
     pre_filled_mandatory_field: Pre-filled mandatory field
     pre_optional_field: Optional entry field

@@ -10,10 +10,7 @@
   move_to_active: ()->
     if @is_current_form_editable()
       $('html, body').animate
-        scrollTop: $(@form_header()).offset().top
+        scrollTop: $(@form_header_id()).offset().top
       , 1500
-
-  form_header: ()->
-    "##{@form_name}_header"
 
 }

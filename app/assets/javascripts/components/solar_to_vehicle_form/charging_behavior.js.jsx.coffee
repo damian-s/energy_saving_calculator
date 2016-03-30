@@ -15,16 +15,17 @@
     @setState { "#{field}": event.target.value }
     
   submit: (event, params)->
-    $('#stv_main_form').trigger 'submit_form', [@form_name, @state]
+    if this.state.availabilities.timeslots.length > 0
+      $('#stv_main_form').trigger 'submit_form', [@form_name, @state]
     
   render_form: ->
     `<div className='well form-content text-center'>
-      <form id='charging_behavior_form' className='form_horizontal' data-toggle='validator' role='form'>
+      <form id={ this.form_element_name() } className='form_horizontal'>
         <TextField value={ this.state.average_capacity_at_start } form_name={ this.form_name } field_name='average_capacity_at_start' type='number' is_required={ true } on_change={ this.form_change } />
         <TextField value={ this.state.average_daily_driving_distance } form_name={ this.form_name } field_name='average_daily_driving_distance' type='number' is_required={ true } on_change={ this.form_change } />
         <Availability form_settings={ this.state.availabilities } />
         <div className='text-left'>
-          <SubmitButton on_click={ this.submit } />
+          <SubmitButton form={ this.form_element_id() } on_click={ this.submit } />
         </div>
       </form>
     </div>`

@@ -28,12 +28,12 @@
     
   render_form: ()->
     `<div className='well form-content text-center'>
-      <form id='electric_vehicle_form' className='form_horizontal' data-toggle='validator' role='form'>
+      <form id={ this.form_element_name() } className='form_horizontal'>
         <SelectField values={ this.state.entry_type_values } selected_value={ this.state.entry_type } form_name={ this.form_name } field_name='entry_type' is_required={ true } on_change={ this.form_change } />
         { this.state.entry_type == 'from_list' ? this.render_ev_list() : false}
         { this.state.entry_type == 'manual' ? this.render_ev_params() : false}
         <div className='text-left'>
-          <SubmitButton on_click={ this.submit } />
+          <SubmitButton form={ this.form_element_id() } on_click={ this.submit } />
         </div>
       </form>
      </div>`

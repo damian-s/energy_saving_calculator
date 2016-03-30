@@ -15,7 +15,7 @@
     `<button type='button' className='btn btn-default' onClick={ this.on_delete(index) }>Delete</button>`
   
   render: ->
-    `<table className='table table-striped'>
+    `<table id='av_table' className='table table-striped'>
       <thead>
         <tr>
           <th> { I18n.t('availability_table.start') } </th>

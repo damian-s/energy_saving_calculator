@@ -1,5 +1,17 @@
 @FormStatusHelpers = {
+
+  form_element_name: ()->
+    "#{@form_name}_form"
     
+  form_element_id: ()->
+    "##{@form_element_name()}"
+    
+  form_header_id: ()->
+    "##{@form_header_name()}"
+    
+  form_header_name: ()->
+    "#{@form_name}_header"
+
   getInitialState: ()->
     @props.form_settings
     

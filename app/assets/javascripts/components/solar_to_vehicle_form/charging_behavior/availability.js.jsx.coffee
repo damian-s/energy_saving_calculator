@@ -30,17 +30,23 @@
   assign_timerange: (event, timerange)->
     @setState {hour_start: timerange[0], hour_stop: timerange[1]}
   
+  render_timeslots_missing: ()->
+    `<div className='well error-well'>
+      { I18n.t('err.timeslots_missing') }
+    </div>`
+  
   render: ->
     `<div className='col-md-12'>
       <div className='text-center'>
         <h4> { I18n.t('charging_behavior.enter_availability') } </h4>
       </div>
       <div className='row text-center'>
-        <SelectField values={ this.state.types } selected_value={ this.state.selected_type } form_name={ this.form_name } field_name='selected_type' is_required={ true } on_change={ this.form_change } />
+        <SelectField values={ this.state.types } selected_value={ this.state.selected_type } form_name={ this.form_name } field_name='selected_type' is_required={ false } on_change={ this.form_change } />
         <br />
         <HourSliderField form_name={ this.form_name } field_name='timeslot_timerenge' on_change={ this.assign_timerange } />
         <button type='button' className='btn btn-default' onClick={ this.add_availability }>{ I18n.t('availability.add') }</button>
-        <AvailabilityTable table_data={ this.state.timeslots } on_delete={ this.delete_availability } />
+        <br />
+        { (this.state.timeslots.length == 0) ? this.render_timeslots_missing() : <AvailabilityTable table_data={ this.state.timeslots } on_delete={ this.delete_availability } /> }
       </div>
     </div>`
     
