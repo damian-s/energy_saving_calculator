@@ -12,10 +12,10 @@ end
 
 def fill_pv_system_form
   within('form#pv_system_form') do
-    fill_in 'pv_system_location', with: 'my location'
+    select('01000 - 01999', from: 'pv_system_location')
     fill_in 'pv_system_power', with: '300'
     fill_in 'pv_system_date', with: '2015-01-01'
-    click_button 'Submit'
+    click_button 'Next'
   end
 end
 
@@ -25,7 +25,7 @@ def fill_electric_vehicle_form
     fill_in 'electric_vehicle_battery_capacity', with: '100'
     fill_in 'electric_vehicle_charging_power', with: '200'
     fill_in 'electric_vehicle_consumption', with: '300'
-    click_button 'Submit'
+    click_button 'Next'
   end
 end
 
@@ -35,7 +35,7 @@ def fill_charging_behavior_form
     fill_in 'charging_behavior_average_daily_driving_distance', with: '100'
     add_availability('Weekday', 0, 1)
     add_availability('Weekend', 2, 4)
-    click_button 'Submit'
+    click_button 'Next'
   end
 end
 
@@ -45,7 +45,7 @@ def fill_electricity_consumption_form
     select 'Enter number of people in household', from: 'electricity_consumption_yearly_consumption'
     fill_in 'electricity_consumption_people_no', with: 3
     fill_in 'electricity_consumption_electricity_price', with: 123
-    click_button 'Submit'
+    click_button 'Next'
   end
   
 end
