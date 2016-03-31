@@ -21,6 +21,7 @@ gem 'bower-rails'
 gem 'bootstrap-slider-rails'
 gem 'lodash-rails'
 gem 'chartkick'
+gem 'figaro'
 
 group :development, :test do
   gem 'rspec-rails'
