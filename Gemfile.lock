@@ -57,6 +57,7 @@ GEM
     capybara-select2 (0.0.8)
       capybara
       rspec
+    chartkick (1.4.2)
     childprocess (0.5.9)
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.0)
@@ -100,6 +101,8 @@ GEM
     listen (3.0.6)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9.7)
+    lodash-rails (4.6.1)
+      railties (>= 3.1)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -251,12 +254,14 @@ DEPENDENCIES
   byebug
   capybara
   capybara-select2
+  chartkick
   coffee-rails (~> 4.1.0)
   dropzonejs-rails
   i18n-js (>= 3.0.0.rc11)
   jbuilder (~> 2.0)
   jquery-rails
   listen (~> 3.0.5)
+  lodash-rails
   pg
   pry
   puma (~> 3.0)

@@ -19,6 +19,8 @@ gem 'dropzonejs-rails'
 gem 'i18n-js', '>= 3.0.0.rc11'
 gem 'bower-rails'
 gem 'bootstrap-slider-rails'
+gem 'lodash-rails'
+gem 'chartkick'
 
 group :development, :test do
   gem 'rspec-rails'
