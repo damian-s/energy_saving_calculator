@@ -1,3 +1,4 @@
+/config/application.yml
 /nbproject/*
 /config/database.yml
 *.rbc
