@@ -51,5 +51,8 @@
     
   is_current_form_editable: ()->
     @state.status == 'edit'
+    
+  param_changed: (param_name, old_state, new_state)->
+    !(old_state[param_name] == new_state[param_name])
 
 }

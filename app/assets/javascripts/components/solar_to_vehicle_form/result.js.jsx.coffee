@@ -12,7 +12,9 @@
     
   render_form: ->
     `<div className='well form-content'>
-      Result { this.props.form_settings.test }
+      <ResultSummary form_settings={ this.state.summary } />
+      <ResultDescription />
+      <ResultLoadDistribution />
     </div>`
     
   render: ->

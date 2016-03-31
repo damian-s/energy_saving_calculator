@@ -6,7 +6,7 @@
     form_settings: React.PropTypes.object
     
   shouldComponentUpdate: (new_props, new_state)->
-    true
+    return (!_.isEqual(@props, new_props)) || @param_changed('timeslots', @state.availabilities, new_state.availabilities)
     
   form_name: 'charging_behavior'
   

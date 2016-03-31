@@ -6,7 +6,7 @@
     form_settings: React.PropTypes.object
     
   shouldComponentUpdate: (new_props, new_state)->
-    true
+    return !_.isEqual(@props, new_props)
     
   form_name: 'pv_system'
   

@@ -71,8 +71,12 @@ class SolarToVehicleConfig
   
   def result_initial_config
     {
-      status: 'hidden',
-      test: 'aaa5'
+      status: 'edit',
+      summary: {
+        electricity_production_pv: '10',
+        electricity_consumption_household: '20',
+        electricity_consumption_ev: '30'
+      }
     }
   end
   

@@ -100,4 +100,21 @@ en:
     
   result:
     title: Result
+    kwh_year: kWh/Year
+    summary:
+      electricity_production_pv: Electricity production PV-System
+      electricity_consumption_household: Electricity consumption household
+      electricity_consumption_ev: Electricity consumption EV
+    description:
+      text: Zur Darstellung der möglichen Bandbreite der Eigenverbrauchshöhe und Wirtschaftlichkeit erfolgt die Berechnung anhand dieser Szenarien
+      focus_on_time_title: Ladezeiten-orientiert 
+      focus_on_time_content: "Dieses Szenario nutzt den PV-Strom sowohl zur Deckung des Haushaltsstrom-bedarfs als auch zum Laden des E-Autos. Die geladene PV-Strommenge ist dabei abhängig von den angegebenen Ladezeiten. Die Ladung startet mit Beginn der angegebenen Lade-verfügbarkeitszeit.
+        -Ladung nach Bedarf -"
+      focus_on_ev_title: PV-orientiert
+      focus_on_ev_content: "Dieses Szenario gestaltet sich wie das Szenario b. Dabei wird die Ladung des E-Autos jedoch an der Verfügbarkeit von überschüssigem PV-Strom orientiert. Die Ladung startet und endet innerhalb der angegebenen Ladeverfügbarkeitszeiträume, wird aber in Solarstromreiche Zeiten verlagert. 
+        - tägliche Ladung -"
+      optimal_title: PV-optimiert
+      optimal_content: "Dieses Szenario soll die maximal mögliche Eigenver-brauchshöhe darstellen. Es orientiert sich nicht an den angegebenen Ladeverfügbarkeitszeiten. Die Ladung erfolgt grundsätzlich bevorzugt mit PV-Strom. Ggf. muss zusätzlich Netzstrom bezogen werden. Es wird von einer Entladung bis 22 Uhr ausgegangen.
+        - tägliche Ladung -"
+    
    

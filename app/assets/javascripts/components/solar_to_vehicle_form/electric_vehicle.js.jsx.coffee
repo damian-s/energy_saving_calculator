@@ -6,7 +6,7 @@
     form_settings: React.PropTypes.object
     
   shouldComponentUpdate: (new_props, new_state)->
-    true
+    return (!_.isEqual(@props, new_props)) || @param_changed('entry_type', @state, new_state) || @param_changed('ev', @state, new_state)
     
   form_name: 'electric_vehicle'
     

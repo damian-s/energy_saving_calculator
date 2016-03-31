@@ -87,3 +87,33 @@
   border-width: thin;
   margin-top: 2%;
 }
+
+.summary-description-content-red {
+  border-width: medium;
+  border-color: red;
+  border-style: solid;
+}
+
+.summary-description-header-red {
+  background-color: red;
+}
+
+.summary-description-content-yellow {
+  border-width: medium;
+  border-color: yellow;
+  border-style: solid;
+}
+
+.summary-description-header-yellow {
+  background-color: yellow;
+}
+
+.summary-description-content-green {
+  border-width: medium;
+  border-color: green;
+  border-style: solid;
+}
+
+.summary-description-header-green {
+  background-color: green;
+}
