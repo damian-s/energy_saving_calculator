@@ -1,6 +1,9 @@
 en:
   submit: Next
   click_to_edit: Click to edit
+  currency: £
+  kwh_year: kWh/Year
+  kwh: kWh
   
   err:
     required_empty: --- Please fill in this field ---
@@ -100,7 +103,6 @@ en:
     
   result:
     title: Result
-    kwh_year: kWh/Year
     summary:
       electricity_production_pv: Electricity production PV-System
       electricity_consumption_household: Electricity consumption household
@@ -116,5 +118,33 @@ en:
       optimal_title: PV-optimiert
       optimal_content: "Dieses Szenario soll die maximal mögliche Eigenver-brauchshöhe darstellen. Es orientiert sich nicht an den angegebenen Ladeverfügbarkeitszeiten. Die Ladung erfolgt grundsätzlich bevorzugt mit PV-Strom. Ggf. muss zusätzlich Netzstrom bezogen werden. Es wird von einer Entladung bis 22 Uhr ausgegangen.
         - tägliche Ladung -"
+    load_distribution:
+      title: Load distribution
+      self_consumption_household:
+        title: Self-consumption of PV-electricity HOUSEHOLD
+      self_consumption_pv:
+        title: Self-consumption of PV-electricity EV
+      necessary_electricity_ev:
+        title: addit. Necessary electricity EV (grid)
+      necessary_electricity_household:
+        title: addit. Necessary electricity Household (grid)
+      grid_feed:
+        title: Grid feed-in off excess PV-power
+    self_consumption:
+      title: Self-consumption
+      relation:
+        title: Self-consumption rate with EV. Relation between direkt PV-power consumption and total electricity demand for household and EV
+    savings:
+      title: SAVINGS WITH SMARTFOX (opposite to Szenario "Ladezeiten-orientiert")
+      self_consumption_savings:
+        title: Savings electicity costs because of self-consumption
+      loss_of_bonus:
+        title: Loss of renewable-energy bonus (German Energy Law) because of self-consumption
+      self_consumption_fee:
+        title: Fee on self-consumption (current, from 10kWp)
+      total:
+        title: Savings per year
+    cost_per_100:
+      title: Cost / 100 KM
     
    

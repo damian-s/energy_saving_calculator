@@ -7,7 +7,7 @@
     true
     
   header_css_class: (colour)->
-    "summary-description-header-#{colour} text-center col-md-3"
+    "summary-description-header-#{colour} text-center col-sm-3"
  
   content_css_class: (colour)->
     "summary-description-content-#{colour}"
@@ -30,22 +30,24 @@
     
   render: ()->
     `<div className='row'>
-      <table className='table'>
-        <thead>
-          <tr>
-            <th className='col-md-3'></th>
-            { this.render_description_header('focus_on_time', 'red') }
-            { this.render_description_header('focus_on_ev', 'yellow') }
-            { this.render_description_header('optimal', 'green') }
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{ I18n.t('result.description.text') }</td>
-            { this.render_description_content('focus_on_time', 'red') }
-            { this.render_description_content('focus_on_ev', 'yellow') }
-            { this.render_description_content('optimal', 'green') }
-          </tr>
-        </tbody>
-      </table>
+      <div className='col-sm-12'>
+        <table className='table'>
+          <thead>
+            <tr>
+              <th className='col-sm-3'></th>
+              { this.render_description_header('focus_on_time', 'red') }
+              { this.render_description_header('focus_on_ev', 'yellow') }
+              { this.render_description_header('optimal', 'green') }
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{ I18n.t('result.description.text') }</td>
+              { this.render_description_content('focus_on_time', 'red') }
+              { this.render_description_content('focus_on_ev', 'yellow') }
+              { this.render_description_content('optimal', 'green') }
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>`

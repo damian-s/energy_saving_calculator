@@ -76,7 +76,28 @@ class SolarToVehicleConfig
         electricity_production_pv: '10',
         electricity_consumption_household: '20',
         electricity_consumption_ev: '30'
-      }
+      },
+      load_distribution: {
+        self_consumption_household: { style: 'normal', data: [1,2,3] },
+        self_consumption_pv: { style: 'normal', data: [4,5,6] },
+        necessary_electricity_ev: {style: 'light', data: [7,8,9] },
+        necessary_electricity_household: { style: 'light', data: [10,11,12] },
+        grid_feed: { style: 'normal', data: [11, 22, 33] }
+      },
+      self_consumption: {
+        relation: { style: 'bold', data: [30.0, 40.0, 50.0] }
+      },
+      savings: {
+        self_consumption_savings: { style: 'normal', data: [11,22,33] },
+        loss_of_bonus: { style: 'normal', data: [44, 55, 66] },
+        self_consumption_fee: { style: 'normal', data: [77, 88, 99] },
+        total: { style: 'summary', data: [111, 222, 333] }
+      },
+      cost_per_100: [
+        [ I18n.t('result.description.focus_on_time_title'), 4], 
+        [ I18n.t('result.description.focus_on_ev_title'), 40], 
+        [ I18n.t('result.description.optimal_title'), 100]
+      ]
     }
   end
   

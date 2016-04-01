@@ -117,3 +117,45 @@
 .summary-description-header-green {
   background-color: green;
 }
+
+.equal-cells-width-4 {
+  td {
+    width: 25%;
+    text-align: center;
+  }
+  td.row-header {
+    text-align: left;
+  }
+}
+
+.chartkick-container {
+  height: 100px;
+}
+
+.table-arrow {
+  color: #8DC63F;
+  text-shadow: 0 0 2px #000;
+  -moz-text-shadow: 0 0 2px #000;
+  -webkit-text-shadow: 0 0 2px #000;
+}
+
+tr.light td{
+  color: grey;
+}
+
+tr.summary td{
+  color: #8DC63F;
+  font-weight: bold;
+  border-top: medium double #ddd !important;
+}
+
+tr.bold { 
+  td {
+    font-weight: bold;
+  }
+  :first-child {
+    color: #8DC63F;
+  }
+  :not(:first-child){
+  }
+}

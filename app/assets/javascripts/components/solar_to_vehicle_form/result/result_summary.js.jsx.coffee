@@ -12,7 +12,7 @@
   render_row: (field_name)->
         `<tr>
           <td><strong>{ this.t(field_name) }</strong></td>
-          <td>{ this.props.form_settings[field_name] } { I18n.t('result.kwh_year') }</td>
+          <td>{ this.props.form_settings[field_name] } { I18n.t('kwh_year') }</td>
         </tr>`  
     
   render: ()->
