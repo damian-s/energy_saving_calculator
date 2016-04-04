@@ -11,11 +11,19 @@
   picker_params: ()->
     switch @props.type
       when 'hour' then { format: 'HH:mm'  }
-      else { defaultDate: @props.value, format: 'YYYY-MM-DD' }
+      else { 
+        defaultDate: @props.value, 
+        format: @date_format() 
+        parseInputDate: (d)=>
+          moment(d, @date_format() )
+      }
+      
+  date_format: ()->
+    I18n.t('date_format')
     
   componentDidMount: ()->
-    dp = $("##{@field_id()}").datetimepicker(@picker_params())
-    dp.on 'dp.change', (e)=>
+    @dp = $("##{@field_id()}").datetimepicker(@picker_params())
+    @dp.on 'dp.change', (e)=>
       @props.on_change(e)
     
   label: ()->
@@ -32,14 +40,17 @@
       I18n.t('err.required_empty')
     else
       false
+      
+  toggle_dp: ()->
+    @dp.data("DateTimePicker").show()
     
   render: ->
     `<div className='form-group'>
       <div className='input-group strech-horizontal'>
         <span className='input-group-addon fixed-width'> { this.label() } </span>
         <input id={ this.field_id() } className='form-control' placeholder={ this.hint() } data-error={ this.error_message() } required={ this.props.is_required } />
-        <span className="input-group-addon">
-          <span className="glyphicon glyphicon-calendar"></span>
+        <span className="input-group-addon with-link-cursor" onClick={ this.toggle_dp }>
+          <span className="glyphicon glyphicon-calendar" ></span>
         </span>
       </div>
       <div className="help-block with-errors text-center"></div>

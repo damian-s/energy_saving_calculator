@@ -18,13 +18,47 @@
     @props.submit(event, @state.timeslots)
     
   add_availability: ()->
-    ts = @state.timeslots || []
-    ts.push { start: @state.hour_start , stop: @state.hour_stop, type: @state.selected_type }
-    @setState { timeslots: ts }
+    ts = _.filter (@state.timeslots || []), (ts)=>
+      ts.type == @state.selected_type
+    new_availability = { start: @state.hour_start , stop: @state.hour_stop, type: @state.selected_type }
+    @check_if_availability_valid ts, new_availability, ()=>
+      all_ts = @state.timeslots
+      all_ts.push new_availability
+      @setState { timeslots: all_ts }
+    , ()->
+      console.log 'bad!'
+      
+  check_if_availability_valid: ( timeslots, availability, success_func, fail_func)->
+    valid = true
+    nav = @availability_to_minutes(availability)
+    _.forEach timeslots, (current_availability)=>
+      return if !valid
+      cav = @availability_to_minutes(current_availability)
+      if @availabilites_cross(cav, nav)
+        valid = false
+    if valid 
+      success_func()
+    else
+      fail_func()
+      
+  availability_to_minutes: (a)->
+    {
+      start: @hour_to_minutes(a.start)
+      stop: @hour_to_minutes(a.stop)
+      type: a.type
+    }
     
-  delete_availability: (index)->
-    new_timeslots = @state.timeslots
-    new_timeslots.splice(index, 1)
+  hour_to_minutes: (h)->
+    h_arr = h.split(':')
+    (parseInt(h_arr[0]) * 60) + parseInt(h_arr[1])
+    
+  availabilites_cross: (old_a, new_a)->
+    (((new_a.start >= old_a.start) && (new_a.start <= old_a.stop)) ||
+    ((new_a.stop >= old_a.start) && (new_a.stop <= old_a.stop)) ||
+    (( new_a.start <= old_a.start ) && ( new_a.stop >= old_a.stop )))
+    
+  delete_availability: (ts)->
+    new_timeslots = _.reject( @state.timeslots, ts )
     @setState { timeslots: new_timeslots }
     
   assign_timerange: (event, timerange)->
@@ -34,6 +68,18 @@
     `<div className='well error-well'>
       { I18n.t('err.timeslots_missing') }
     </div>`
+    
+  timeslots: ()->
+    _.sortBy @state.timeslots, (ts)->
+      ts.start
+    
+  weekend_timeslots: ()->
+    _.filter @timeslots(), (ts)->
+      ts.type == 'weekend'
+    
+  weekday_timeslots: ()->
+    _.filter @timeslots(), (ts)->
+      ts.type == 'weekday'
   
   render: ->
     `<div className='col-md-12'>
@@ -46,7 +92,12 @@
         <HourSliderField form_name={ this.form_name } field_name='timeslot_timerenge' on_change={ this.assign_timerange } />
         <button type='button' className='btn btn-default' onClick={ this.add_availability }>{ I18n.t('availability.add') }</button>
         <br />
-        { (this.state.timeslots.length == 0) ? this.render_timeslots_missing() : <AvailabilityTable table_data={ this.state.timeslots } on_delete={ this.delete_availability } /> }
+        <div className='col-md-6 text-center'>
+          { (this.weekday_timeslots().length == 0) ? this.render_timeslots_missing() : <AvailabilityTable header={ I18n.t('availability_table.weekdays_title') } table_data={ this.weekday_timeslots() } on_delete={ this.delete_availability } /> }
+        </div>
+        <div className='col-md-6 text-center'>
+          { (this.weekend_timeslots().length == 0) ? this.render_timeslots_missing() : <AvailabilityTable header={ I18n.t('availability_table.weekends_title') } table_data={ this.weekend_timeslots() } on_delete={ this.delete_availability } /> }
+        </div>  
       </div>
     </div>`
     

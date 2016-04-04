@@ -3,6 +3,15 @@ class Ev < ApplicationRecord
   
   include Importable
   
+  def self.manual_ev
+    {
+      name: I18n.t('electric_vehicle.entry_type.manual_opt'),
+      battery_capacity: '',
+      charging_power: '',
+      consumption: ''
+    }
+  end
+  
   def fields_to_import
     ['battery_capacity', 'charging_power', 'consumption', 'ev_type_id']
   end
@@ -15,7 +24,7 @@ class Ev < ApplicationRecord
         charging_power: ev.charging_power.to_s, 
         consumption: ev.consumption.to_s
       }
-    end
+    end.unshift(manual_ev)
   end
   
 end

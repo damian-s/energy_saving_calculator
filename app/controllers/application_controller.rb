@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
   def set_locale
     if cookies[:energy_saving_calculator_locale] && I18n.available_locales.include?(cookies[:energy_saving_calculator_locale].to_sym)
       I18n.locale = cookies[:energy_saving_calculator_locale]
+      I18n.default_locale = cookies[:energy_saving_calculator_locale]
     end
   end
   

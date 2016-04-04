@@ -1,0 +1,152 @@
+de:
+  submit: DE Next
+  click_to_edit: DE Click to edit
+  currency: EUR
+  kwh_year: kWh/Year
+  kwh: kWh
+  date_format: 'DD/MM/YYYY'
+  
+  err:
+    required_empty: DE --- Please fill in this field ---
+    required_numeric: DE --- Please enter a number equal or greater than 0 ---
+    timeslots_missing: DE You have to add at least one timeslot
+    
+  hour_slider:
+    selected_hour: DE Selected hour
+  
+  sv_header:
+    title: DE SOLAR TO VEHICLE
+    subtitle: DE Your tool for optimizing self-consumption with your Electric Vehicle
+    explanation_html: <p><strong> DE Explanation</strong></p>
+                      <p>Diese Anwendung ermöglicht Ihnen eine schnelle Berechnung der Wirtschaftlichkeit und des erzielbaren Eigenvebrauchs in Abhängigkeit Ihrer Angaben zu PV-Anlage, Elektroauto, Ladestation und Nutzungsverhalten.</p>
+                      <ul>
+                        <li>Alle Eingabefelder sind mit Erklärungen versehen. In "vorausgefüllten Pflichtfeldern" sind bereits Erfahrungswerte eingetragen. Sie können diese übernehmen oder eigene Werte eintragen.</li>
+                        <li>Sie können - nach dem Ausfüllen aller Pflichtfelder und ggf. vorausgefüllter Pflichtfelder - die Berechnung starten, indem Sie auf den Button "ERGEBNIS" drücken. </li>
+                        <li>Sollten Sie nachträglich nochmal eine Eingabe verändern wollen drücken Sie bitte nochmals auf "ERGEBNIS" und nehmen Sie die gewünschten Änderungen vor. Anschließend kann die Berechnung erneut durch Klicken auf "ERGEBNIS" gestartet werden.</li>
+                        <li>Genauere Informationen zu Ihrem Ergebnis erhalten Sie auch unter den Tabs "Grafiken" und "Wirtschaftlichkeit".</li>
+                      </ul>
+                      <div class='text-right'><strong>© The Mobility House GmbH, 2016</strong></div>
+    mandatory_field: DE Mandatory field
+    pre_filled_mandatory_field: DE Pre-filled mandatory field
+    pre_optional_field: DE Optional entry field
+    
+  pv_system:
+    title: DE PV system
+    location_label: DE Location (zip code)
+    location_hint: DE Enter your location's zip code
+    power: DE Power of the pv System
+    power_hint: DE Enter power of the pv system in kWp
+    date: DE Commissioning date
+    date_hint: DE Enter commisioning date
+    
+  electric_vehicle:
+    title: DE Electric Vehicle
+    entry_type_label: DE How do you want to enter your EV's data?
+    entry_type:
+        from_list_opt: DE Select model from list
+        manual_opt: DE Input data manually
+    entry_type_hint: DE Please select your EV parameters
+    battery_capacity: DE Battery capacity [kWh]
+    battery_capacity_hint: DE Enter battery capacity (in kWh)
+    charging_power: DE Charging power [kW]
+    charging_power_hint: DE Enter charging power (in kW)
+    consumption: DE Consumption [kWh/100km]
+    consumption_hint: DE Enter power consumption (in kWh/100km)
+    ev_label: DE Car model
+    ev_hint: DE Please select car / input data manually
+    
+  charging_behavior:
+    title: DE Charging behavior
+    average_capacity_at_start: DE Average capacity at start of charging [%]
+    average_capacity_at_start_hint: DE Enter average capacity at start of charging (in %)
+    average_daily_driving_distance: DE Average dayly driving distance [km]
+    average_daily_driving_distance_hint: DE Enter average dayly driving distance (in km)
+    enter_availability: DE Please enter the time slots, when your car usually stands at home.
+    
+  availability:  
+    selected_type_label: DE Day of avaiability
+    selected_type_hint: DE Please select day for new availability 
+    selected_type:
+      weekend_opt: DE Weekend
+      weekday_opt: DE Weekday
+    hour_start: DE Start hour of availability
+    hour_start_hint: DE Please enter start hour of car availability
+    hour_stop: DE Stop hour of availability
+    hour_stop_hint: DE Please enter stop hour of car availability
+    add: DE Add availability
+    
+  availability_table:
+    start: DE Start of timeslot
+    stop: DE Stop of timeslot
+    day: DE Day of week
+    
+  electricity_consumption:
+    title: DE Electicity consumption
+    at_home_on_weekdays_label: DE Are you daytimes usually at home on working days? (Monday - Friday 10:00 - 16:00)
+    at_home_on_weekdays_hint: DE Please select if you are at home on working days
+    at_home_on_weekdays:
+      true_opt: 'DE Yes'
+      false_opt: 'DE No'
+    
+    yearly_consumption_label: DE Your yearly electricity consumption (household)
+    yearly_consumption_hint: DE Please select how do you want to enter your yearly energy consumption
+    yearly_consumption:
+      enter_value_opt: DE Enter value
+      enter_people_no_opt: DE Enter number of people in household
+
+    people_no: DE Number of people in your household
+    people_no_hint: DE Enter number of people in your household
+    
+    yearly_consumption_kwh: DE Yearly consumption [kWh]
+    yearly_consumption_kwh_hint: Enter yearly consumption (in kWh)
+    
+    electricity_price: DE Your electricity price (household tarif) [ct GBP/kWh]
+    electricity_price_hint: DE Enter your current electricity price (in GBP/kWh)
+    
+  result:
+    title: DE Result
+    summary:
+      electricity_production_pv: DE Electricity production PV-System
+      electricity_consumption_household: DE Electricity consumption household
+      electricity_consumption_ev: DE Electricity consumption EV
+    description:
+      text: DE Zur Darstellung der möglichen Bandbreite der Eigenverbrauchshöhe und Wirtschaftlichkeit erfolgt die Berechnung anhand dieser Szenarien
+      focus_on_time_title: DE Ladezeiten-orientiert 
+      focus_on_time_content: "DE Dieses Szenario nutzt den PV-Strom sowohl zur Deckung des Haushaltsstrom-bedarfs als auch zum Laden des E-Autos. Die geladene PV-Strommenge ist dabei abhängig von den angegebenen Ladezeiten. Die Ladung startet mit Beginn der angegebenen Lade-verfügbarkeitszeit.
+        -Ladung nach Bedarf -"
+      focus_on_ev_title: DE PV-orientiert
+      focus_on_ev_content: "DE Dieses Szenario gestaltet sich wie das Szenario b. Dabei wird die Ladung des E-Autos jedoch an der Verfügbarkeit von überschüssigem PV-Strom orientiert. Die Ladung startet und endet innerhalb der angegebenen Ladeverfügbarkeitszeiträume, wird aber in Solarstromreiche Zeiten verlagert. 
+        - tägliche Ladung -"
+      optimal_title: DE PV-optimiert
+      optimal_content: "DE Dieses Szenario soll die maximal mögliche Eigenver-brauchshöhe darstellen. Es orientiert sich nicht an den angegebenen Ladeverfügbarkeitszeiten. Die Ladung erfolgt grundsätzlich bevorzugt mit PV-Strom. Ggf. muss zusätzlich Netzstrom bezogen werden. Es wird von einer Entladung bis 22 Uhr ausgegangen.
+        - tägliche Ladung -"
+    load_distribution:
+      title: DE Load distribution
+      self_consumption_household:
+        title: DE Self-consumption of PV-electricity HOUSEHOLD
+      self_consumption_pv:
+        title: DE Self-consumption of PV-electricity EV
+      necessary_electricity_ev:
+        title: DE addit. Necessary electricity EV (grid)
+      necessary_electricity_household:
+        title: DE addit. Necessary electricity Household (grid)
+      grid_feed:
+        title: DE Grid feed-in off excess PV-power
+    self_consumption:
+      title: DE Self-consumption
+      relation:
+        title: DE Self-consumption rate with EV. Relation between direkt PV-power consumption and total electricity demand for household and EV
+    savings:
+      title: DE SAVINGS WITH SMARTFOX (opposite to Szenario "Ladezeiten-orientiert")
+      self_consumption_savings:
+        title: DE Savings electicity costs because of self-consumption
+      loss_of_bonus:
+        title: DE Loss of renewable-energy bonus (German Energy Law) because of self-consumption
+      self_consumption_fee:
+        title: DE Fee on self-consumption (current, from 10kWp)
+      total:
+        title: DE Savings per year
+    cost_per_100:
+      title: DE Cost / 100 KM
+    
+   

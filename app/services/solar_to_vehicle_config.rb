@@ -30,27 +30,24 @@ class SolarToVehicleConfig
   def electric_vehicle_initial_config
     {
       status: 'hidden',
-      entry_type: ENTRY_TYPE_VALUES.first, 
-      entry_type_values: ENTRY_TYPE_VALUES,
-      ev: cars.first[:name],
-      ev_data: cars.first,
+      ev: '',
       ev_list: cars,
       battery_capacity: '', 
       charging_power: '', 
       consumption: ''
-    }    
+    }   
   end
   
   def charging_behavior_initial_config
     {
       status: 'hidden',
-      average_capacity_at_start: '',
-      average_daily_driving_distance: '',
+      average_capacity_at_start: '35',
+      average_daily_driving_distance: '50',
       availabilities: { 
         types: AVAILABILITES_TYPES,
         selected_type: AVAILABILITES_TYPES.first,
         timeslots: [],
-        hour_start: '8:00',
+        hour_start: '08:00',
         hour_stop: '16:00'
       }
     }    
@@ -71,7 +68,7 @@ class SolarToVehicleConfig
   
   def result_initial_config
     {
-      status: 'edit',
+      status: 'hidden',
       summary: {
         electricity_production_pv: '10',
         electricity_consumption_household: '20',

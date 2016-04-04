@@ -159,3 +159,7 @@ tr.bold {
   :not(:first-child){
   }
 }
+
+.with-link-cursor {
+  cursor: pointer;
+}

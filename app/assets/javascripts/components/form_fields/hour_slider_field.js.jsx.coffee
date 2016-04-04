@@ -17,6 +17,7 @@
     value: [480, 960]
     ticks_labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00', '24:00'],
     ticks: [0, 240, 480, 720, 960, 1200, 1439]
+    step: 15
     
   componentDidMount: ()->
     $("##{@field_id()}").slider(@default_config())

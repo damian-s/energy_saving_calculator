@@ -4,6 +4,7 @@ en:
   currency: £
   kwh_year: kWh/Year
   kwh: kWh
+  date_format: 'YYYY-MM-DD'
   
   err:
     required_empty: --- Please fill in this field ---
@@ -52,6 +53,7 @@ en:
     consumption: Consumption [kWh/100km]
     consumption_hint: Enter power consumption (in kWh/100km)
     ev_label: Car model
+    ev_hint: Please select car / input data manually
     
   charging_behavior:
     title: Charging behavior
@@ -77,6 +79,8 @@ en:
     start: Start of timeslot
     stop: Stop of timeslot
     day: Day of week
+    weekdays_title: Timeslots for weekdays
+    weekends_title: Timeslots for weekends
     
   electricity_consumption:
     title: Electicity consumption
@@ -98,8 +102,8 @@ en:
     yearly_consumption_kwh: Yearly consumption [kWh]
     yearly_consumption_kwh_hint: Enter yearly consumption (in kWh)
     
-    electricity_price: Your electricity price (household tarif) [ct/kWh]
-    electricity_price_hint: Enter your current electricity price (in ct/kWh)
+    electricity_price: Your electricity price (household tarif) [ct GBP/kWh]
+    electricity_price_hint: Enter your current electricity price (in GBP/kWh)
     
   result:
     title: Result
