@@ -57,11 +57,12 @@ de:
     
   charging_behavior:
     title: DE Charging behavior
-    average_capacity_at_start: DE Average capacity at start of charging [%]
+    average_capacity_at_start_label: DE Average capacity at start of charging [%]
     average_capacity_at_start_hint: DE Enter average capacity at start of charging (in %)
-    average_daily_driving_distance: DE Average dayly driving distance [km]
+    average_daily_driving_distance_label: DE Average dayly driving distance [km]
     average_daily_driving_distance_hint: DE Enter average dayly driving distance (in km)
     enter_availability: DE Please enter the time slots, when your car usually stands at home.
+    timeslots_cross_error: DE Timeslots for each type (weekday/weekend) cannot cross or contain each other.
     
   availability:  
     selected_type_label: DE Day of avaiability

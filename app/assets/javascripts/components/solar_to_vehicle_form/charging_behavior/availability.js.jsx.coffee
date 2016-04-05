@@ -2,6 +2,7 @@
 
   propTypes:
     form_settings: React.PropTypes.object
+    on_change: React.PropTypes.func
     
   getInitialState: ()->
     @props.form_settings
@@ -14,19 +15,21 @@
     new_state[field] = event.target.value
     @setState new_state
     
-  submit: (event)->
-    @props.submit(event, @state.timeslots)
-    
   add_availability: ()->
     ts = _.filter (@state.timeslots || []), (ts)=>
       ts.type == @state.selected_type
     new_availability = { start: @state.hour_start , stop: @state.hour_stop, type: @state.selected_type }
     @check_if_availability_valid ts, new_availability, ()=>
-      all_ts = @state.timeslots
+      all_ts = _.clone @state.timeslots
       all_ts.push new_availability
-      @setState { timeslots: all_ts }
-    , ()->
-      console.log 'bad!'
+      @setState { timeslots: all_ts }, ()=>
+        @props.on_change @state
+    , ()=>
+      @show_error = true
+      @forceUpdate()
+      
+  hide_error: ()->
+    @show_error = false
       
   check_if_availability_valid: ( timeslots, availability, success_func, fail_func)->
     valid = true
@@ -59,7 +62,8 @@
     
   delete_availability: (ts)->
     new_timeslots = _.reject( @state.timeslots, ts )
-    @setState { timeslots: new_timeslots }
+    @setState { timeslots: new_timeslots }, ()=>
+      @props.on_change(@state)
     
   assign_timerange: (event, timerange)->
     @setState {hour_start: timerange[0], hour_stop: timerange[1]}
@@ -92,11 +96,13 @@
         <HourSliderField form_name={ this.form_name } field_name='timeslot_timerenge' on_change={ this.assign_timerange } />
         <button type='button' className='btn btn-default' onClick={ this.add_availability }>{ I18n.t('availability.add') }</button>
         <br />
+        { this.show_error ? <ErrorMessage message={ I18n.t('charging_behavior.timeslots_cross_error') } on_show={ this.hide_error } /> : false}
+        <br />
         <div className='col-md-6 text-center'>
-          { (this.weekday_timeslots().length == 0) ? this.render_timeslots_missing() : <AvailabilityTable header={ I18n.t('availability_table.weekdays_title') } table_data={ this.weekday_timeslots() } on_delete={ this.delete_availability } /> }
+          { (this.weekday_timeslots().length == 0) ? <ErrorMessage message={ I18n.t('err.timeslots_missing') } /> : <AvailabilityTable header={ I18n.t('availability_table.weekdays_title') } table_data={ this.weekday_timeslots() } on_delete={ this.delete_availability } /> }
         </div>
         <div className='col-md-6 text-center'>
-          { (this.weekend_timeslots().length == 0) ? this.render_timeslots_missing() : <AvailabilityTable header={ I18n.t('availability_table.weekends_title') } table_data={ this.weekend_timeslots() } on_delete={ this.delete_availability } /> }
+          { (this.weekend_timeslots().length == 0) ? <ErrorMessage message={ I18n.t('err.timeslots_missing') } /> : <AvailabilityTable header={ I18n.t('availability_table.weekends_title') } table_data={ this.weekend_timeslots() } on_delete={ this.delete_availability } /> }
         </div>  
       </div>
     </div>`

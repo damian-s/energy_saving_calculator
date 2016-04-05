@@ -14,16 +14,32 @@
     field = _.replace(event.target.id, "#{@form_name}_", '')
     @setState { "#{field}": event.target.value }
     
+  availability_change: (new_availabilities)->
+    @setState { availabilities: new_availabilities }
+    
   submit: (event, params)->
-    if this.state.availabilities.timeslots.length > 0
+    this.availability_ref
+    if @timeslots_are_set()
       $('#stv_main_form').trigger 'submit_form', [@form_name, @state]
+  
+  timeslots_are_set: ()->
+    @timeslot_set('weekday') && @timeslot_set('weekend')
+    
+  timeslot_set: (type)->
+    _.findIndex(@state.availabilities.timeslots, ['type', type]) >= 0
+  
+   capacity_steps: ()->
+    (x for x in [0..100] by 5)
+    
+   distance_steps: ()->
+    (x for x in [0..1000] by 5)
     
   render_form: ->
     `<div className='well form-content text-center'>
       <form id={ this.form_element_name() } className='form_horizontal'>
-        <TextField value={ this.state.average_capacity_at_start } form_name={ this.form_name } field_name='average_capacity_at_start' type='number' is_required={ true } on_change={ this.form_change } />
-        <TextField value={ this.state.average_daily_driving_distance } form_name={ this.form_name } field_name='average_daily_driving_distance' type='number' is_required={ true } on_change={ this.form_change } />
-        <Availability form_settings={ this.state.availabilities } />
+        <SelectField values={ this.capacity_steps() } selected_value={ this.state.average_capacity_at_start } form_name={ this.form_name } field_name='average_capacity_at_start' is_required={ true } on_change={ this.form_change } dont_translate={ true }/>
+        <SelectField values={ this.distance_steps() } selected_value={ this.state.average_daily_driving_distance } form_name={ this.form_name } field_name='average_daily_driving_distance' is_required={ true } on_change={ this.form_change } dont_translate={ true }/>
+        <Availability form_settings={ this.state.availabilities } on_change={ this.availability_change } />
         <div className='text-left'>
           <SubmitButton form={ this.form_element_id() } on_click={ this.submit } />
         </div>

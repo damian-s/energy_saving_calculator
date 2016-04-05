@@ -20,7 +20,6 @@
   form_name: 'stv_main'
   
   set_locale: (new_locale)->
-    console.log new_locale
     I18n.locale = new_locale
     I18n.defaultLocale = new_locale   
       
