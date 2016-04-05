@@ -29,36 +29,36 @@
     @mask = _.merge(@mask, { "#{form_name}": { status: status } })
     return @
     
-  toggle_acceptance: ()->
-    if @initial_state[@form_name].status == 'accepted'
-      @edit()
-    else
-      @accept()
+  get_status: (form_name=@form_name)->
+    @initial_state[form_name].status
   
-  edit_next: ()->
-    if @next_state_name
+  edit_next_if_not_accepted: ()->
+    if @next_state_name && (@get_status(@next_state_name) != 'accepted')
       @edit(@next_state_name)
-      @hide_all_after_editable()
     return @
+
+  show_result_if_all_accepted: ()->
+    new_state = @get_new_state()
+    show = true
+    _.forEach @FORMS[0..(@FORMS.length - 2)], (form)->
+      if new_state[form].status != 'accepted'
+        show = false
+    @edit('result') if show
+
+# ==============================================================================
 
   get_new_state: ()->
     _.merge(@initial_state, @mask)
-
-  hide_all_after_editable: ()->
-    editable_found = false
-    for i in [0..(@FORMS.length-1)]
-      if ( (@mask[@FORMS[i]].status == 'edit') && !editable_found )
-        editable_found = true
-      else
-        if editable_found
-          @hide(@FORMS[i])
-        else
-          @accept(@FORMS[i])
-    return @
-
-    
-    
-    
-
-    
   
+  edit_form: ()->
+    @edit()
+    @hide('result')
+    
+  submit_form: (form_data)->
+    @set_new_state_data(form_data)
+    @accept()
+    @edit_next_if_not_accepted()
+    @show_result_if_all_accepted()
+    return @
+    
+# ==============================================================================

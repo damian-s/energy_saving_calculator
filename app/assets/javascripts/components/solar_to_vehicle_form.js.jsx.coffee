@@ -11,10 +11,10 @@
     
   componentDidMount: ()->
     $(@form_element_id()).on 'edit_form', (event, form_name)=>
-      new_state = new FormSwitcher(@state, form_name).edit().hide_all_after_editable().get_new_state()
+      new_state = new FormSwitcher(@state, form_name).edit_form().get_new_state()
       @setState new_state
     $(@form_element_id()).on 'submit_form', (event, form_name, form_data)=>
-      new_state = new FormSwitcher(@state, form_name).set_new_state_data(form_data).accept().edit_next().get_new_state()
+      new_state = new FormSwitcher(@state, form_name).submit_form(form_data).get_new_state()
       @setState new_state
       
   form_name: 'stv_main'

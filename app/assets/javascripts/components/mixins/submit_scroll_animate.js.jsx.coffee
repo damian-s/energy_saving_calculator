@@ -1,16 +1,17 @@
 @SubmitScrollAnimate = {
 
-  componentDidUpdate: ()->
-    @move_to_active()
+  componentDidUpdate: (prevProps, prevState)->
+    if (prevProps.form_settings.status == 'accepted') && @is_current_form_editable()
+      @move_to_active()
     
+
   componentDidMount: ()->
-    if (@form_name != 'pv_system')
+    if (@form_name != 'pv_system') && @is_current_form_editable()
       @move_to_active()
     
   move_to_active: ()->
-    if @is_current_form_editable()
-      $('html, body').animate
-        scrollTop: $(@form_header_id()).offset().top
-      , 1500
+    $('html, body').animate
+      scrollTop: $(@form_header_id()).offset().top
+    , 1500
 
 }
