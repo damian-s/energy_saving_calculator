@@ -5,7 +5,7 @@ set :repo_url, 'git@github.com:codetain/energy_saving_calculator.git'
 set :linked_files, %w{
   config/database.yml
 }
-set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle}
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/assets}
 set :bundle_binstubs, nil
 set :bundle_path, -> { shared_path.join('vendor/bundle') }
 set :keep_releases, 3
